@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
+import { LoginPageForm } from './login.page.form';
 
 @Component({
   selector: 'app-login',
@@ -7,9 +9,13 @@ import { Router } from '@angular/router';
   styleUrls: ['./login.page.scss'],
 })
 export class LoginPage implements OnInit {
-  constructor(private router: Router) {}
+  loginForm: FormGroup;
 
-  ngOnInit() {}
+  constructor(private router: Router, private formBuilder: FormBuilder) {}
+
+  ngOnInit() {
+    this.loginForm = new LoginPageForm(this.formBuilder).createLoginForm();
+  }
 
   doLogin() {
     this.router.navigate(['home']);
