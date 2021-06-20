@@ -1,2 +1,2 @@
 # 3r-app
-Recycling is cool
+Recycling is cool. A Recycling App.
