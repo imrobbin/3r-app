@@ -1,0 +1,44 @@
+<ion-header>
+  <ion-toolbar color="success">
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>3R's</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list class="ion-no-padding">
+    <ion-item color="success" lines="none">
+      <ion-avatar slot="start">
+        <img
+          src="https://i.pinimg.com/originals/51/f6/fb/51f6fb256629fc755b8870c801092942.png"
+        />
+      </ion-avatar>
+      <ion-label>
+        <h1>Ravindra Patle</h1>
+        <p>Gathered <span class="money">$25</span></p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+
+  <app-pickup-call-card
+    status="hold"
+    updatedAt="20/06/2021 17:50:00"
+    createdAt="19/06/2021"
+    note="we have two bags that are full, one with plastic and other with glasses"
+  >
+    <ion-card-header header>
+      <ion-card-subtitle>Last Pickup Call</ion-card-subtitle>
+    </ion-card-header>
+    <ion-button footer expand="block" fill="clear" color="success">
+      See All...
+    </ion-button>
+  </app-pickup-call-card>
+</ion-content>
+
+<ion-fab vertical="bottom" horizontal="end" slot="fixed">
+  <ion-fab-button color="success">
+    <ion-icon name="add"></ion-icon>
+  </ion-fab-button>
+</ion-fab>

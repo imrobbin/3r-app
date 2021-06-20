@@ -1,0 +1,47 @@
+<ion-card class="pick-up-card">
+  <!-- <ion-card-header *ngIf="hasHeader">
+    <ion-card-subtitle>Last Pickup Call</ion-card-subtitle>
+  </ion-card-header> -->
+  <ng-content select="[header]"></ng-content>
+  <ion-card-content>
+    <ion-item lines="none">
+      <ion-icon
+        *ngIf="status === 'hold'"
+        slot="start"
+        name="hourglass-outline"
+        color="warning"
+      ></ion-icon>
+      <ion-icon
+        *ngIf="status === 'processing'"
+        slot="start"
+        name="archive-outline"
+        color="secondary"
+      ></ion-icon>
+      <ion-icon
+        *ngIf="status === 'finished'"
+        slot="start"
+        name="checkmark-circle-outline"
+        color="primary"
+      ></ion-icon>
+      <ion-label>
+        <span *ngIf="status === 'hold'">On hold</span>
+        <span *ngIf="status === 'processing'">On processing</span>
+        <span *ngIf="status === 'finished'">Finished</span>
+        <p>{{ updatedAt }}</p>
+      </ion-label>
+    </ion-item>
+    <ion-item lines="none">
+      <ion-label class="ion-text-wrap">
+        <p>
+          Created at <span>{{ createdAt }}</span>
+        </p>
+        <p *ngIf="note">Note: {{ note }}.</p>
+      </ion-label>
+    </ion-item>
+    <ion-item lines="none" *ngIf="status === 'finished'">
+      <ion-icon slot="start" name="trophy" color="success"></ion-icon>
+      <ion-label color="success">{{ amount }}</ion-label>
+    </ion-item>
+    <ng-content select="[footer]"></ng-content>
+  </ion-card-content>
+</ion-card>
