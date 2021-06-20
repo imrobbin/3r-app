@@ -17,8 +17,15 @@
         <ion-button expand="block" color="dark" fill="clear">
           Forgot Password
         </ion-button>
-        <ion-button expand="block" color="success"> Login </ion-button>
-        <ion-button expand="block" color="success" fill="clear">
+        <ion-button expand="block" color="success" (click)="doLogin()">
+          Login
+        </ion-button>
+        <ion-button
+          expand="block"
+          color="success"
+          fill="clear"
+          (click)="gotoRegistration()"
+        >
           Register
         </ion-button>
       </ion-card-content>
